@@ -1,35 +1,29 @@
-.login-container {
-   
+
+#inputs {
+    background: rgb(32, 32, 32);
+    border: solid 3px #1f1f1f;    
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #787878;
+}
+#inputs:focus {
+    border: solid 3px #1ADCAD;
+    outline: none;
 }
 
-.signin {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-
-    input {
-        margin-right: 4px;
-        height: 40px;
-        background: #0c0c0c;
-        border: solid 2px #2E3236;
-        color: white;
-    }
-    input:focus {
-        border: solid 3px #1ADCAD;
-        outline: none;
-    }
-
-    button {
-        padding: 10px 25px;
-        margin-left: 10px;
-        color: white;
-        border-radius: 20px;
-        border: solid 2px #1ADCAD;
-        
-    }
-    button:focus {
-        outline: none;
-    }
-
+#login-button {
+    color: #787878;
+    margin-top: 1.5rem;
+    border: solid 3px #1ADCAD;
+    background: rgb(32, 32, 32);
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px 25px;
+    transition: all .6s ease;
     
+}
+#login-button:hover {
+    background: #1ADCAD;
+    color:rgb(32, 32, 32);
+    outline: none;
 }

@@ -1,28 +1,22 @@
-.register-container {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    height: 70vh;
-    align-items: center;
-    justify-content: center;
 
-    h1 {
-        font-size: 3rem;
-        font-family: 'Roboto', sans-serif;;
-    }
+#header {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    padding-top: 30px;
-    
-    input {
-        margin-bottom: 10px;
-        padding: 15px;
-    }
-    input:focus {
-        border: solid 3px #1ADCAD;
-        outline: none;
-    }
+#register-inputs {
+    background: rgb(32, 32, 32);
+    border: solid 3px #1f1f1f;  
+    font-weight: bold;
+    color: #787878;
+}
+#register-inputs:focus {
+    border: solid 3px #1ADCAD;
+    outline: none;
+}
+
+.register-form {
+    margin-top: 2rem;
 }
