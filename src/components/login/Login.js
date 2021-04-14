@@ -11,16 +11,21 @@ function Login() {
         <Form className="form">
           <Row>
             <Col md={{ span: 3, offset: 3 }}>
-              <Form.Control placeholder="Email" id="inputs" />
+              <Form.Control placeholder="Email" className="inputs" />
             </Col>
             <Col md={3}>
-              <Form.Control type="password" placeholder="Password" id="inputs" />
+              <Form.Control type="password" placeholder="Password" className="inputs" />
             </Col>
             <Col md={3}>
               <Button id="login-button">Login</Button>
             </Col>
           </Row>
         </Form>
+        <Row>
+          <Col md={{offset: 4}}>
+            <h1 id="social">SOCIAL</h1>
+          </Col>
+        </Row>
       </Container>
       <RegisterCard />
     </div>

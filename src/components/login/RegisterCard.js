@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 function RegisterCard() {
   return (
@@ -14,25 +14,40 @@ function RegisterCard() {
         <Form className="register-form">
           <Form.Row>
             <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
-              <Form.Control type="name" placeholder="Full Name" id="register-inputs" />
+              <Form.Control
+                type="name"
+                placeholder="Full Name"
+                id="register-inputs"
+              />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group
               as={Col}
-              controlId="formGridEmail"
               md={{ span: 4, offset: 4 }}
             >
-              <Form.Control type="email" placeholder="Enter Email" id="register-inputs" />
+              <Form.Control
+                type="email"
+                placeholder="Enter Email"
+                id="register-inputs"
+              />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group
               as={Col}
-              controlId="formGridPassword"
               md={{ span: 4, offset: 4 }}
             >
-              <Form.Control type="password" placeholder="Password" id="register-inputs" />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                id="register-inputs"
+              />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md={{ offset: 5}}>
+              <Button id="register-button">Register</Button>
             </Form.Group>
           </Form.Row>
         </Form>

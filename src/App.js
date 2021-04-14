@@ -1,8 +1,7 @@
 import React from "react";
 
 import "./styles/App.scss";
-import { Container } from "react-bootstrap";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 
 function App() {
   return (

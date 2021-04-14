@@ -1,4 +1,9 @@
 
+.register-container {
+    // border: solid 0.5px #1ADCAD;
+    // padding: 50px;
+}
+
 #header {
     color: white;
     font-family: "Roboto", sans-serif;
@@ -19,4 +24,23 @@
 
 .register-form {
     margin-top: 2rem;
+}
+
+#register-button {
+    font-weight: bold;
+    background: rgb(32, 32, 32);
+    border: solid 2px #1ADCAD;
+    color: #787878;
+}
+#register-button:active {
+    transform: scale(0.98);
+
+}
+#register-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+#register-button:hover {
+    background: #1ADCAD;
+    color:rgb(32, 32, 32);
 }

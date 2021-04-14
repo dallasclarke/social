@@ -1,29 +1,57 @@
-
-#inputs {
-    background: rgb(32, 32, 32);
-    border: solid 3px #1f1f1f;    
+.form {
+  .inputs {
+    background-color: rgb(32, 32, 32);
+    border: solid 3px #1f1f1f;
     margin-top: 1.5rem;
     font-weight: bold;
     color: #787878;
-}
-#inputs:focus {
-    border: solid 3px #1ADCAD;
+  }
+  .inputs:focus {
+    border: solid 3px #1adcad;
     outline: none;
+    background: rgb(32, 32, 32);
+  }
 }
+// .inputs {
+//   background: rgb(32, 32, 32);
+//   border: solid 3px #1f1f1f;
+//   margin-top: 1.5rem;
+//   font-weight: bold;
+//   color: #787878;
+// }
+// .inputs:focus {
+//   border: solid 3px #1adcad;
+//   outline: none;
+// }
 
 #login-button {
-    color: #787878;
-    margin-top: 1.5rem;
-    border: solid 3px #1ADCAD;
-    background: rgb(32, 32, 32);
-    font-weight: bold;
-    border-radius: 20px;
-    padding: 5px 25px;
-    transition: all .6s ease;
-    
+  color: #787878;
+  margin-top: 1.5rem;
+  border: solid 3px #1adcad;
+  background: rgb(32, 32, 32);
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 25px;
+  transition: all 0.6s ease;
 }
 #login-button:hover {
-    background: #1ADCAD;
-    color:rgb(32, 32, 32);
-    outline: none;
+  background: #1adcad;
+  color: rgb(32, 32, 32);
+  outline: none;
+}
+#login-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+#login-button:active {
+  transform: scale(0.9);
+}
+
+#social {
+  margin-top: 4rem;
+  color: white;
+  font-weight: bold;
+  font-size: 6rem;
+  font-family: "Roboto";
+  text-shadow: 1px 2px #1adcad;
 }
