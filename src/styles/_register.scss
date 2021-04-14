@@ -1,46 +1,51 @@
-
-.register-container {
-    // border: solid 0.5px #1ADCAD;
-    // padding: 50px;
-}
-
 #header {
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 3rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
-#register-inputs {
-    background: rgb(32, 32, 32);
-    border: solid 3px #1f1f1f;  
-    font-weight: bold;
-    color: #787878;
-}
-#register-inputs:focus {
-    border: solid 3px #1ADCAD;
-    outline: none;
-}
+// #register-inputs {
+//   background: rgb(32, 32, 32);
+//   border: solid 3px #1f1f1f;
+//   font-weight: bold;
+//   color: #787878;
+// }
+// #register-inputs:focus {
+//   border: solid 3px #1adcad;
+//   outline: none;
+// }
 
 .register-form {
-    margin-top: 2rem;
+  margin-top: 2rem;
+
+  .register-inputs {
+    background: rgb(32, 32, 32);
+    border: solid 3px #1f1f1f;
+    font-weight: bold;
+    color: #787878;
+  }
+  .register-inputs:focus {
+    border: solid 3px #1adcad;
+    background: rgb(32, 32, 32);
+    outline: none;
+  }
 }
 
 #register-button {
-    font-weight: bold;
-    background: rgb(32, 32, 32);
-    border: solid 2px #1ADCAD;
-    color: #787878;
+  font-weight: bold;
+  background: rgb(32, 32, 32);
+  border: solid 2px #1adcad;
+  color: #787878;
 }
 #register-button:active {
-    transform: scale(0.98);
-
+  transform: scale(0.98);
 }
 #register-button:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 #register-button:hover {
-    background: #1ADCAD;
-    color:rgb(32, 32, 32);
+  background: #1adcad;
+  color: rgb(32, 32, 32);
 }

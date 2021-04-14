@@ -12,17 +12,16 @@
     background: rgb(32, 32, 32);
   }
 }
-// .inputs {
-//   background: rgb(32, 32, 32);
-//   border: solid 3px #1f1f1f;
-//   margin-top: 1.5rem;
-//   font-weight: bold;
-//   color: #787878;
-// }
-// .inputs:focus {
-//   border: solid 3px #1adcad;
-//   outline: none;
-// }
+
+#date {
+  background-color: rgb(32, 32, 32);
+  color: #787878;
+  border: solid 3px #1f1f1f;
+  font-weight: bold;
+}
+#date:focus {
+  border: solid 3px #1adcad;
+}
 
 #login-button {
   color: #787878;

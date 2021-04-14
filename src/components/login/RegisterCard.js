@@ -17,36 +17,35 @@ function RegisterCard() {
               <Form.Control
                 type="name"
                 placeholder="Full Name"
-                id="register-inputs"
+                className="register-inputs"
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group
-              as={Col}
-              md={{ span: 4, offset: 4 }}
-            >
+            <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
               <Form.Control
                 type="email"
                 placeholder="Enter Email"
-                id="register-inputs"
+                className="register-inputs"
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group
-              as={Col}
-              md={{ span: 4, offset: 4 }}
-            >
+            <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
               <Form.Control
                 type="password"
                 placeholder="Password"
-                id="register-inputs"
+                className="register-inputs"
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} md={{ offset: 5}}>
+            <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
+              <Form.Control type="date" name="date_of_birth" placeholder="Birthday" id="date" />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md={{ span:3, offset: 4 }}>
               <Button id="register-button">Register</Button>
             </Form.Group>
           </Form.Row>
