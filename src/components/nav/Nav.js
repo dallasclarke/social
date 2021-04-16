@@ -29,7 +29,8 @@ function AppNav() {
             <FormControl type="text" placeholder="Search" />
           </Form>
           <Nav>
-            <button className="ripple">Logout</button>
+            <button>Profile</button>
+            <button>Logout</button>
           </Nav>
         </Navbar>
       </Container>
