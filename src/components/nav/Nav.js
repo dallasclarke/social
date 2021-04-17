@@ -26,7 +26,7 @@ function AppNav() {
             />
           </Navbar.Brand>
           <Form>
-            <FormControl type="text" placeholder="Search" />
+            <FormControl type="text" placeholder="Search for user" />
           </Form>
           <Nav>
             <button>Profile</button>

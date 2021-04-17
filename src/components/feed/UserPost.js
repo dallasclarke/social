@@ -1,4 +1,5 @@
 import React from "react";
+import { RiImageAddFill } from "react-icons/ri";
 
 import {
   Container,
@@ -14,32 +15,24 @@ function UserPost() {
   return (
     <div className="post">
       <Container className="container">
-        {/* <Row className="input-area">
-          <Col md={{ offset: 1 }}>
-            <img
-              src="https://www.tvovermind.com/wp-content/uploads/2018/07/Ric-Flair.jpg"
-              alt="avatar"
-              id="user"
-            />
-            <input type="text" placeholder="Write Something..." />
-          </Col>
-          <Col className="d-flex align-items-center">
-            <Button>Post</Button>
-          </Col>
-        </Row> */}
         <Row>
-          <Col>
+          <Col md={{ span: 8, offset: 1 }} className="user-input d-flex">
             <img
               id="user-avatar"
               src="https://www.tvovermind.com/wp-content/uploads/2018/07/Ric-Flair.jpg"
             />
-          </Col>
-          <Col>
-            <FormControl />
+            <FormControl placeholder="Write Something..." />
           </Col>
         </Row>
         <Row>
-          <button>Post</button>
+          <Col xs={{span: 3, offset:3}} md={{span: 1, offset: 2}}>
+            <button>
+              <RiImageAddFill style={{ color: "white" }} size={25} />
+            </button>
+          </Col>
+          <Col xs={{span: 2, offset: 2}} md={{ span: 1, offset: 7 }}>
+            <button id="post-button">Post</button>
+          </Col>
         </Row>
       </Container>
     </div>
