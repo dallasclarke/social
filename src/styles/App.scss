@@ -5,10 +5,15 @@
   background: #0f0f0f;
 }
 
+.App {
+  
+}
+
 
 @import "~bootstrap/scss/bootstrap";
 @import "./login";
 @import "./register";
 @import "./feed";
 @import "./nav";
+@import "./profile";
 @import "./custom";

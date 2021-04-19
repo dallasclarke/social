@@ -1,0 +1,51 @@
+// Profile
+
+
+// Info Bar
+.info-bar {
+    border: solid 2px #1adcad;
+    width: 850px;
+    height: 6rem;
+    text-align: center;
+
+}
+
+#arrow {
+    color: #1adcad;
+    cursor: pointer;
+}
+#arrow:active {
+    transform: scale(0.85);
+}
+
+// User Info
+.user-info {
+    border: solid 2px #1adcad;
+    margin-top: 1rem;
+    width: 850px;
+    height: 25rem;
+    
+   
+}
+
+.info-container {
+    margin-top: 2rem;
+    flex-direction: column;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    
+}
+
+#profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 100px;
+}
+
+#edit-profile-btn {
+    color: white;
+    border-color: #1adcad;
+    border-radius: 25px;
+    font-weight: bold;
+    padding: 5px 10px;
+}

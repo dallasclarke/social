@@ -8,7 +8,7 @@ function Postings() {
       <Container>
         <Col>
           <h1>ANOTHER</h1>
-          <h1>POSTINGS</h1>
+          <h1>POSTING</h1>
         </Col>
       </Container>
     </div>

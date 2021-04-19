@@ -14,7 +14,7 @@ function Feed() {
         <Row>
           <Col>
             <UserPost />
-            <Postings />
+            <Postings />            
           </Col>
         </Row>
       </Container>
