@@ -7,6 +7,8 @@ import Postings from "./Postings";
 import { Container, Row, Col } from "react-bootstrap";
 
 function Feed() {
+  
+
   return (
     <div className="feed">
       <AppNav />
