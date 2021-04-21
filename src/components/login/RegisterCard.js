@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { reduxForm, Field } from "redux-form";
 
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 function RegisterCard() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    birthday: "",
+  });
+
+  const onChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="d-flex align-items-center fullvHeight">
       <Container className="register-container">
@@ -41,11 +60,16 @@ function RegisterCard() {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
-              <Form.Control type="date" name="date_of_birth" placeholder="Birthday" id="date" />
+              <Form.Control
+                type="date"
+                name="date_of_birth"
+                placeholder="Birthday"
+                id="date"
+              />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} md={{ span:3, offset: 4 }}>
+            <Form.Group as={Col} md={{ span: 3, offset: 4 }}>
               <Button id="register-button">Register</Button>
             </Form.Group>
           </Form.Row>
@@ -55,4 +79,4 @@ function RegisterCard() {
   );
 }
 
-export default RegisterCard;
+export default reduxForm({ form: "signup" })(RegisterCard);

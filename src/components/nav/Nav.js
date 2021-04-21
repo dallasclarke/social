@@ -11,7 +11,16 @@ import {
   Col,
 } from "react-bootstrap";
 
+import { useDispatch } from "react-redux";
+import { authLogoutUser } from "../../reducers/auth";
+
 function AppNav() {
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch(authLogoutUser());
+  };
+
   return (
     <div className="nav">
       <Container>
@@ -30,7 +39,7 @@ function AppNav() {
           </Form>
           <Nav>
             <button>Profile</button>
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
           </Nav>
         </Navbar>
       </Container>
