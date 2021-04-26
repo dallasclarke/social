@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Navbar, Nav, Form, FormControl, Container } from "react-bootstrap";
 
@@ -16,7 +17,7 @@ function AppNav() {
     <div className="nav">
       <Container>
         <Navbar className="bar justify-content-between" fixed="top">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
               alt="Logo"
@@ -29,7 +30,9 @@ function AppNav() {
             <FormControl type="text" placeholder="Search for user" />
           </Form>
           <Nav>
-            <button>Profile</button>
+            <Link to="/profile">
+              <button>Profile</button>
+            </Link>
             <button onClick={logout}>Logout</button>
           </Nav>
         </Navbar>

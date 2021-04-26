@@ -17,7 +17,7 @@ function Postings(props) {
     dispatch(deletePost(id));
   };
 
-  console.log(posts, "<=====posts");
+  // console.log(posts, "<= posts");
 
   return (
     <div className="feed-posts">
@@ -25,9 +25,10 @@ function Postings(props) {
         <Col>
           {posts.posts &&
             posts.posts.map((post) => {
+             
               return (
                 <div className="post-box" key={post._id}>
-                  <Col md={{offset: 11, span: 1}}>
+                  <Col md={{ offset: 11, span: 1 }}>
                     <button
                       id="post-btn"
                       onClick={() => handleDelete(post._id)}
@@ -35,6 +36,7 @@ function Postings(props) {
                       X
                     </button>
                   </Col>
+                  <h4>{post.name}</h4>
                   <h4>{post.user}</h4>
                   <h4>{post.date}</h4>
                   <p>{post.text}</p>

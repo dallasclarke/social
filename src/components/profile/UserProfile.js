@@ -20,7 +20,7 @@ function UserProfile() {
             </Row>
             <Row>
               <Col>
-                <Postings />
+                {/* <Postings /> */}
               </Col>
             </Row>
           </Col>

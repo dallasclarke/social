@@ -1,5 +1,7 @@
 const initialState = {};
 
+
+
 export const authLoginUser = (email, password) => async (dispatch) => {
   const response = await fetch(`/api/users/sign-in`, {
     method: "POST",
@@ -21,6 +23,7 @@ export const authLoginUser = (email, password) => async (dispatch) => {
   const { jwtToken, email: userEmail } = await response.json();
 
   localStorage.setItem("token", jwtToken);
+  
 
   dispatch({ type: "AUTH_UPDATE_USER", user: { email: userEmail } });
 };

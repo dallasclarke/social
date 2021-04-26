@@ -1,7 +1,7 @@
 // const GET_POSTS = "GET_POSTS";
 // const POST_ERROR = "POST_ERROR";
-const token = localStorage.getItem("token");
-const initialState = {};
+
+const initialState = [];
 
 export const getPostsAction = (posts) => ({
   type: "GET_POSTS",
@@ -9,6 +9,7 @@ export const getPostsAction = (posts) => ({
 });
 
 export const getPosts = () => async (dispatch) => {
+  const token = localStorage.getItem("token");
   const response = await fetch(`/api/posts`, {
     headers: {
       "content-type": "application/json",
@@ -27,6 +28,7 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const deletePost = (id) => async (dispatch) => {
+  const token = localStorage.getItem("token");
   const response = await fetch(`/api/posts/${id}`, {
     method: "DELETE",
     headers: {
@@ -46,7 +48,9 @@ export const deletePost = (id) => async (dispatch) => {
 };
 
 export const addPost = (post) => async (dispatch) => {
+
   try {
+    const token = localStorage.getItem("token");
     const response = await fetch(`/api/posts`, {
       method: "POST",
       headers: {
