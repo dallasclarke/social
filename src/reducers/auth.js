@@ -25,6 +25,30 @@ export const authLoginUser = (email, password) => async (dispatch) => {
   dispatch({ type: "AUTH_UPDATE_USER", user: { email: userEmail } });
 };
 
+export const authRegisterUser = (regData) => async (dispatch) => {
+  const response = await fetch(`/api/users/create-user`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(regData),
+  });
+
+  if (response.status !== 200) {
+    const error = await response.json();
+    dispatch({ type: "AUTH_ERROR", error: error.message });
+    return;
+  }
+
+  const  message = await response.json();
+
+
+  console.log('successfully registered(!!', message)
+ window.location = '/'
+  //dispatch({ type: "AUTH_UPDATE_USER", user: { email: userEmail } });
+};
+
+
 export const authLogoutUser = () => async (dispatch) => {
   localStorage.removeItem("token");
   dispatch({ type: "AUTH_UPDATE_USER", user: null });

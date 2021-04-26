@@ -10,6 +10,7 @@ const initialState = {
     error: null,
   },
   alert: [],
+  posts: [],
 };
 
 const middleware = [thunk];

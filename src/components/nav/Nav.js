@@ -1,15 +1,6 @@
 import React from "react";
 
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Container,
-  Button,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Container } from "react-bootstrap";
 
 import { useDispatch } from "react-redux";
 import { authLogoutUser } from "../../reducers/auth";

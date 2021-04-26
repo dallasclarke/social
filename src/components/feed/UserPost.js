@@ -1,50 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiImageAddFill } from "react-icons/ri";
 
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  Form,
-  FormControl,
-} from "react-bootstrap";
+import { Container, Row, Col, FormControl, Form } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../reducers/posts";
+
+
+
 
 function UserPost() {
+
+  const dispatch = useDispatch();
+
+  const [text, setText] = useState('')
+
+  const  handlePost = () => {
+    dispatch(addPost(text))
+   console.log(text)
+  }
   return (
     <div className="post">
-      {/* <Container className="container">
-        <Row>
-          <Col md={{ span: 8, offset: 1 }} className="user-input d-flex">
-            <img
-              id="user-avatar"
-              src="https://www.tvovermind.com/wp-content/uploads/2018/07/Ric-Flair.jpg"
-            />
-            <FormControl placeholder="Write Something..." />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={{span: 3, offset:3}} md={{span: 1, offset: 2}}>
-            <button>
-              <RiImageAddFill style={{ color: "white" }} size={25} />
-            </button>
-          </Col>
-          <Col xs={{span: 2, offset: 2}} md={{ span: 1, offset: 7 }}>
-            <button id="post-button">Post</button>
-          </Col>
-        </Row>
-      </Container> */}
       <Container className="d-flex justify-content-center">
         <Row>
           <Col>
             <img
               src="https://www.tvovermind.com/wp-content/uploads/2018/07/Ric-Flair.jpg"
               id="user-avatar"
+              alt="User-Avatar"
             />
-
-            <FormControl id="post-box" as="input" placeholder="Write Something..." />
-            <button>Post</button>
+            <Form
+      
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <FormControl
+                id="post-box"
+                as="input"
+                placeholder="Write Something..."
+                onChange={(e) => setText(e.target.value)}
+              />
+              <button onClick={handlePost}>Post</button>
+            </Form>
           </Col>
         </Row>
       </Container>

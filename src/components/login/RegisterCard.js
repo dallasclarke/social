@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { reduxForm, Field } from "redux-form";
 
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { authRegisterUser } from "../../reducers/auth";
 
 function RegisterCard() {
   const [formData, setFormData] = useState({
@@ -9,18 +10,19 @@ function RegisterCard() {
     email: "",
     password: "",
     birthday: "",
-  });
+  })
 
-  const onChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
+   const dispatch = useDispatch();
+  
+  const handleChange = e => {
+     setFormData({...formData, [e.target.name]: e.target.value})
   }
+
+  const handleSubmit = () => {
+     dispatch(authRegisterUser(formData));
+
+  }
+
 
   return (
     <div className="d-flex align-items-center fullvHeight">
@@ -30,13 +32,15 @@ function RegisterCard() {
             <h1 id="header">Not A User? Sign Up Now!</h1>
           </Col>
         </Row>
-        <Form className="register-form">
+        <Form className="register-form" onSubmit={(e) => e.preventDefault()}>
           <Form.Row>
             <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
               <Form.Control
                 type="name"
                 placeholder="Full Name"
                 className="register-inputs"
+                name='name'
+                onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
@@ -46,6 +50,8 @@ function RegisterCard() {
                 type="email"
                 placeholder="Enter Email"
                 className="register-inputs"
+                 name='email'
+                onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
@@ -55,6 +61,8 @@ function RegisterCard() {
                 type="password"
                 placeholder="Password"
                 className="register-inputs"
+                 name='password'
+                onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
@@ -65,12 +73,14 @@ function RegisterCard() {
                 name="date_of_birth"
                 placeholder="Birthday"
                 id="date"
+                 name='birthday'
+                onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md={{ span: 3, offset: 4 }}>
-              <Button id="register-button">Register</Button>
+              <Button id="register-button" onClick={handleSubmit}>Register</Button>
             </Form.Group>
           </Form.Row>
         </Form>
@@ -79,4 +89,4 @@ function RegisterCard() {
   );
 }
 
-export default reduxForm({ form: "signup" })(RegisterCard);
+export default RegisterCard;
