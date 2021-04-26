@@ -5,19 +5,15 @@ import { Container, Row, Col, FormControl, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../reducers/posts";
 
-
-
-
 function UserPost() {
-
   const dispatch = useDispatch();
 
-  const [text, setText] = useState('')
+  const [text, setText] = useState("");
 
-  const  handlePost = () => {
-    dispatch(addPost(text))
-   console.log(text)
-  }
+  const handlePost = () => {
+    dispatch(addPost(text));
+    console.log(text);
+  };
   return (
     <div className="post">
       <Container className="d-flex justify-content-center">
@@ -28,10 +24,7 @@ function UserPost() {
               id="user-avatar"
               alt="User-Avatar"
             />
-            <Form
-      
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <Form onSubmit={(e) => e.preventDefault()}>
               <FormControl
                 id="post-box"
                 as="input"

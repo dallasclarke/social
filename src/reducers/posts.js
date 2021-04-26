@@ -1,6 +1,6 @@
 // const GET_POSTS = "GET_POSTS";
 // const POST_ERROR = "POST_ERROR";
-const token = localStorage.getItem('token')
+const token = localStorage.getItem("token");
 const initialState = {};
 
 export const getPostsAction = (posts) => ({
@@ -8,23 +8,21 @@ export const getPostsAction = (posts) => ({
   payload: posts,
 });
 
-
-
 export const getPosts = () => async (dispatch) => {
   const response = await fetch(`/api/posts`, {
-      headers:{
-          'content-type':'application/json',
-           'Authorization': 'Bearer ' + token
-      }
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + token,
+    },
   });
   const posts = await response.json();
 
-//   if (response.status !== 200) {
-//     const error = await response.json();
-//     dispatch({ type: "POST_ERROR", error: error.message });
-//     return;
-//   }
- 
+  //   if (response.status !== 200) {
+  //     const error = await response.json();
+  //     dispatch({ type: "POST_ERROR", error: error.message });
+  //     return;
+  //   }
+
   dispatch({ type: "GET_POSTS", payload: posts });
 };
 
@@ -33,13 +31,11 @@ export const deletePost = (id) => async (dispatch) => {
     method: "DELETE",
     headers: {
       "content-type": "application/json",
-      'Authorization': "Bearer " + token,
+      Authorization: "Bearer " + token,
     },
   });
 
-     dispatch({ type: "DELETE_POST", payload: id });
-
-
+  dispatch({ type: "DELETE_POST", payload: id });
 
   /*  if (response.status !== 200) {
     const error = await response.json();
@@ -47,30 +43,25 @@ export const deletePost = (id) => async (dispatch) => {
     return;
   }
  */
-
 };
 
 export const addPost = (post) => async (dispatch) => {
+  try {
+    const response = await fetch(`/api/posts`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({ text: post }),
+    });
 
-    try{
- const response = await fetch(`/api/posts`, {
-   method: "POST",
-   headers: {
-     "content-type": "application/json",
-     'Authorization': "Bearer " + token,
-   },
-   body: JSON.stringify({text: post}),
- });
-
-
-
- const res = await response.json();
- console.log("successs", res);
- dispatch({ type: "ADD_POST", payload: res });
-    }catch(err){
-        console.log(err)
-    }
- 
+    const res = await response.json();
+    console.log("successs", res);
+    dispatch({ type: "ADD_POST", payload: res });
+  } catch (err) {
+    console.log(err);
+  }
 
   /*  if (response.status !== 200) {
     const error = await response.json();
@@ -79,8 +70,6 @@ export const addPost = (post) => async (dispatch) => {
   }
  */
 };
-
-
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -106,11 +95,10 @@ export default (state = initialState, action) => {
     case "ADD_POST":
       return {
         ...state,
-        posts: [...state.posts, action.payload]
+        posts: [...state.posts, action.payload],
       };
 
     default:
       return state;
   }
-
 };
