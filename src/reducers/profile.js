@@ -40,6 +40,10 @@ export const editProfile = (bio, city, state) => async (dispatch) => {
         state,
       }),
     });
+
+    dispatch({
+      type: "UPDATE_PROFILE"
+    })
   } catch (err) {}
 };
 
