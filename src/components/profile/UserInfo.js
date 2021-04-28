@@ -36,7 +36,7 @@ function UserInfo(props) {
           </Col>
           <Col>
             <FaCheck color={"#1adcad"} size={20} />
-            <h3>Date Joined</h3>
+            <h3>{moment(props.profile.dateJoined).format("MMM Do YYYY")}</h3>
           </Col>
           <Col>
             <FaCalendar color={"#1adcad"} size={20} />
