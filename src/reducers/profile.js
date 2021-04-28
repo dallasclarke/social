@@ -1,12 +1,10 @@
-import axios from "axios";
-
 const initialState = {
   profile: {},
 };
 
 export const getCurrentProfile = () => async (dispatch) => {
   const token = localStorage.getItem("token");
-  
+
   try {
     const res = await fetch("/api/profile", {
       headers: {
@@ -26,6 +24,25 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
+export const editProfile = (bio, city, state) => async (dispatch) => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const res = await fetch("/api/profile", {
+      method: "PUT",
+      headers: {
+        "Content-type": "Application/json",
+        Authorization: "Bear " + token,
+      },
+      body: JSON.stringify({
+        bio,
+        city,
+        state,
+      }),
+    });
+  } catch (err) {}
+};
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case "GET_PROFILE":
@@ -36,8 +53,11 @@ export default (state = initialState, action) => {
     case "UPDATE_PROFILE":
       return {
         ...state,
-        profile: action.payload,
+        bio: action.payload,
+        city: action.payload,
+        state: action.payload,
       };
+
     default:
       return state;
   }

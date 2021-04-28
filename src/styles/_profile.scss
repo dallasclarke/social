@@ -49,3 +49,28 @@
     font-weight: bold;
     padding: 5px 10px;
 }
+
+//Modal
+.modal {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    background: transparent;
+    margin-top: 5rem;
+    
+    button {
+        color: white
+    }
+    button:hover {
+        color: #1adcad;
+    }
+
+    #modal-btn {
+        background-color: #1c1c1c;
+        font-weight: bold;
+        border: solid 2px #1adcad;
+    }
+    #modal-btn:focus {        
+        box-shadow: none;
+    }
+}

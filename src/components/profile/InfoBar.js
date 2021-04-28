@@ -20,7 +20,7 @@ function InfoBar(props) {
         </Row>
         <Row className="d-flex align-items-center" md={{ span: 5 }}>
           <Col>
-            <h4>User posts</h4>
+            {/* <h4>{props.profile.posts.length} Posts</h4> */}
           </Col>
         </Row>
       </Container>

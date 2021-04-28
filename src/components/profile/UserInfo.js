@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from 'moment'
+
 import { Container, Row, Col } from "react-bootstrap";
 import { FaMapMarkerAlt, FaCalendar, FaCheck } from "react-icons/fa"
+import ProfileModal from "../modal/ProfileModal";
 
 function UserInfo(props) {
+  const [showModal, setShowModal] = useState(false);
  
   return (
     <div className="user-info">
@@ -18,21 +21,22 @@ function UserInfo(props) {
             <h1>{props.profile.name}</h1>
           </Col>
           <Col>
-            <button id="edit-profile-btn">Edit Profile</button>
+            <button id="edit-profile-btn" onClick={() => setShowModal(!showModal)}>Edit Profile</button>
           </Col>
         </Row>
         <Row>
           <h3>Bio:</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
             ducimus commodi dolor illo natus sequi, nesciunt corporis, culpa
-            nemo placeat voluptatem, ad animi illum suscipit!
+            nemo placeat voluptatem, ad animi illum suscipit! */}
+            {props.profile.bio}
           </p>
         </Row>
         <Row>
           <Col>
             <FaMapMarkerAlt color={"#1adcad"} size={20} />
-            <h3>City</h3>
+            <h3>{props.profile.city}, {props.profile.state}</h3>
           </Col>
           <Col>
             <FaCheck color={"#1adcad"} size={20} />
@@ -43,6 +47,7 @@ function UserInfo(props) {
             <h3>{moment(props.profile.birthday).format("MMM Do YYYY")}</h3>
           </Col>
         </Row>
+        <ProfileModal toggle={showModal} setToggle={setShowModal} />
       </Container>
     </div>
   );
