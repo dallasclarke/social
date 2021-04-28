@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 
-function InfoBar() {
+function InfoBar(props) {
   return (
     <div className="info-bar d-flex align-items-center">
       <Container className="d-flex">
@@ -15,7 +15,7 @@ function InfoBar() {
             </Link>
           </Col>
           <Col md={{ span: 6 }}>
-            <h4>Users Name</h4>
+            <h4>{props.profile.name}</h4>
           </Col>
         </Row>
         <Row className="d-flex align-items-center" md={{ span: 5 }}>

@@ -17,7 +17,7 @@ export const getPosts = () => async (dispatch) => {
     },
   });
   const posts = await response.json();
-
+  console.log(posts)
   //   if (response.status !== 200) {
   //     const error = await response.json();
   //     dispatch({ type: "POST_ERROR", error: error.message });

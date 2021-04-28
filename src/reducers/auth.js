@@ -20,9 +20,10 @@ export const authLoginUser = (email, password) => async (dispatch) => {
     return;
   }
 
-  const { jwtToken, email: userEmail } = await response.json();
+  const { jwtToken, email: userEmail, userId } = await response.json();
 
   localStorage.setItem("token", jwtToken);
+  localStorage.setItem("userId", userId);
   
 
   dispatch({ type: "AUTH_UPDATE_USER", user: { email: userEmail } });

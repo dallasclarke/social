@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import moment from "moment"
 
 import { deletePost, getPosts } from "../../reducers/posts";
 
@@ -36,9 +37,8 @@ function Postings(props) {
                       X
                     </button>
                   </Col>
-                  <h4>{post.name}</h4>
-                  <h4>{post.user}</h4>
-                  <h4>{post.date}</h4>
+                  <h4>{post.user.name}</h4>                  
+                  <h4>{moment(post.date).format("MMM D YYYY")}</h4>
                   <p>{post.text}</p>
                 </div>
               );

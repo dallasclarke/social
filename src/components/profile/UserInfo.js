@@ -1,9 +1,10 @@
 import React from "react";
-
+import moment from 'moment'
 import { Container, Row, Col } from "react-bootstrap";
 import { FaMapMarkerAlt, FaCalendar, FaCheck } from "react-icons/fa"
 
-function UserInfo() {
+function UserInfo(props) {
+ 
   return (
     <div className="user-info">
       <Container className="info-container">
@@ -14,7 +15,7 @@ function UserInfo() {
               alt="profile-pic"
               id="profile-pic"
             />
-            <h1>Users Name</h1>
+            <h1>{props.profile.name}</h1>
           </Col>
           <Col>
             <button id="edit-profile-btn">Edit Profile</button>
@@ -39,7 +40,7 @@ function UserInfo() {
           </Col>
           <Col>
             <FaCalendar color={"#1adcad"} size={20} />
-            <h3>DOB</h3>
+            <h3>{moment(props.profile.birthday).format("MMM Do YYYY")}</h3>
           </Col>
         </Row>
       </Container>
