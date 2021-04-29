@@ -1,44 +1,53 @@
 .post {
-    border: solid 3px #787878;
-    width: 900px;
-    height: 250px;
-    margin-top: 2rem;
-    padding-left: 60px;
-    padding-top: 2rem;
+  border: solid 3px #1adcad;
+  width: 900px;
+  height: 250px;
+  margin-top: 2rem;
+  padding-left: 60px;
+  padding-top: 2rem;
 }
 
 #user-avatar {
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    margin-right: 1.3rem;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin-right: 1.3rem;
 }
 
 #post-box {
-    width: 500px;
-    
+  width: 500px;
 }
 
 // Postings
 .feed-posts {
-    margin-top: 1rem;
-    color: white;
-    font-family: "Roboto", sans-serif;
+  margin-top: 1rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 .post-box {
-    border: solid 2px #787878;
-    width: 900px;
-    margin-top: 1rem;
-    padding: 10px;
-    margin-left: 4rem;
+  border: solid 2px #1adcad;
+  width: 900px;
+  margin-top: 1rem;
+  padding: 10px;
+  margin-left: 4rem;
 
-    p {
-        text-align: center;
-    }
+  p {
+    text-align: center;
+    margin-top: 1rem;
+  }
 }
 
+
 #post-btn {
-  margin-left: 1.5rem;
-  margin-top: 0.3rem;
+  margin-left: 3rem;
+  margin-top: 0.2rem;
+  color: white;
+}
+
+#post-avatar {
+  border-radius: 50px;
+  height: 65px;
+  width: 60px;
+ 
 }

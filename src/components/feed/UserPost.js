@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { RiImageAddFill } from "react-icons/ri";
 
 import { Container, Row, Col, FormControl, Form } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPost } from "../../reducers/posts";
 
 function UserPost() {
-  const dispatch = useDispatch();
-
   const [text, setText] = useState("");
+
+  const user = useSelector(state => state.profile)
+  const dispatch = useDispatch();
 
   const handlePost = () => {
     dispatch(addPost(text));
@@ -20,7 +21,7 @@ function UserPost() {
         <Row>
           <Col>
             <img
-              src="https://www.tvovermind.com/wp-content/uploads/2018/07/Ric-Flair.jpg"
+              src={user.profile.avatar}
               id="user-avatar"
               alt="User-Avatar"
             />

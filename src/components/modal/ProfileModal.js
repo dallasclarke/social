@@ -14,8 +14,14 @@ function ProfileModal({ toggle, setToggle }) {
 
   const dispatch = useDispatch();
 
-  const handleEdit = () => {
-    dispatch(editProfile(profileData))
+  const onChange = (e) => {
+    setProfileData({ ...profileData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
   }
 
   return (
@@ -30,12 +36,7 @@ function ProfileModal({ toggle, setToggle }) {
               <Form.Group as={Col}>
                 <Form.Label>Bio:</Form.Label>
                 <Form.Control
-                  onChange={(e) =>
-                    setProfileData((prevState) => ({
-                      ...prevState,
-                      bio: e.target.value,
-                    }))
-                  }
+                  onChange={e => onChange(e)}
                 />
               </Form.Group>
             </Form.Row>
@@ -43,22 +44,13 @@ function ProfileModal({ toggle, setToggle }) {
               <Form.Group as={Col}>
                 <Form.Label>City:</Form.Label>
                 <Form.Control
-                  onChange={(e) =>
-                    setProfileData((prevState) => ({
-                      ...prevState,
-                      city: e.target.value,
-                    }))
-                  }
+                  onChange={e => onChange(e)}
                 />
               </Form.Group>
               <Form.Group as={Col}>
                 <Form.Label>State:</Form.Label>
                 <Form.Control
-                  onChange={(e) =>
-                    setProfileData((prevState) => ({
-                      state: e.target.value,
-                    }))
-                  }
+                  onChange={(e) => onChange(e)}
                 />
               </Form.Group>
             </Form.Row>
@@ -66,7 +58,9 @@ function ProfileModal({ toggle, setToggle }) {
         </Modal.Body>
         <Row>
           <Col md={{ offset: 5 }}>
-            <Button id="modal-btn" onClick={handleEdit}>Submit</Button>
+            <Button id="modal-btn" onClick={handleSubmit}>
+              Submit
+            </Button>
           </Col>
         </Row>
       </Modal>

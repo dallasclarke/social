@@ -14,7 +14,7 @@ export const getCurrentProfile = () => async (dispatch) => {
     });
 
     const data = await res.json();
-    console.log("profile from action ===>", data);
+    // console.log("profile from action ===>", data);
     dispatch({
       type: "GET_PROFILE",
       payload: data,
