@@ -14,10 +14,6 @@
   margin-right: 1.3rem;
 }
 
-#post-box {
-  width: 500px;
-}
-
 // Postings
 .feed-posts {
   margin-top: 1rem;
@@ -27,17 +23,12 @@
 
 .post-box {
   border: solid 2px #1adcad;
-  width: 900px;
-  margin-top: 1rem;
-  padding: 10px;
-  margin-left: 4rem;
+  margin-bottom: 1rem;
 
   p {
     text-align: center;
-    margin-top: 1rem;
   }
 }
-
 
 #post-btn {
   margin-left: 3rem;
@@ -45,9 +36,17 @@
   color: white;
 }
 
-#post-avatar {
+.post-avatar {
   border-radius: 50px;
-  height: 65px;
-  width: 60px;
- 
+  height: 64px;
+  width: 64px;
 }
+
+.dd-toggle {
+  background: black;
+  border: solid 1px #1adcad;
+  box-shadow: none;
+}
+
+
+

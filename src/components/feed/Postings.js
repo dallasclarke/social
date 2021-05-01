@@ -4,10 +4,10 @@ import moment from "moment";
 
 import { deletePost, getPosts } from "../../reducers/posts";
 
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Dropdown, Card } from "react-bootstrap";
 
 function Postings(props) {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,55 +18,76 @@ function Postings(props) {
     dispatch(deletePost(id));
   };
 
-  // console.log(posts, "<= posts");
+  return posts ? (
+    <>
+      {posts.map((post) => {
+        return (
+          <Card key={post._id}>
+            <Card.Header className="d-flex align-items-center">
+              <img src={post.user.avatar} className="post-avatar" />
+              <h4>{post.user.name}</h4>
+              <h4>{moment(post.date).format("MMM D YYYY")}</h4>
+              <Dropdown>
+                <Dropdown.Toggle />
+                <Dropdown.Menu>
+                  <Dropdown.Item>Edit</Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleDelete(post._id)}>
+                    Delete
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Card.Header>
+            <Card.Body>
+              <Card.Text>{post.text}</Card.Text>
+            </Card.Body>
+          </Card>
+        );
+      })}
+    </>
+  ) : null;
 
   return (
     <div className="feed-posts">
-      <Container>
-        <Col>
-          {posts.posts &&
-            posts.posts.map((post) => {
-              return (
-                <div className="post-box" key={post._id}>
-                  <Container>
-                    {/* <Col md={{ offset: 11, span: 1 }}>
-                    <button
-                      id="post-btn"
-                      onClick={() => handleDelete(post._id)}
-                    >
-                      X
-                    </button>
-                  </Col>                  
-                    <img src={post.user.avatar} id="post-avatar" />
-                    <h4>{post.user.name}</h4>
-                    <h4>{moment(post.date).format("MMM D YYYY")}</h4>                  
-                  <p>{post.text}</p> */}
-                    <Row>
-                      <Col className="d-flex" md={{ span: 12 }}>
-                        <img src={post.user.avatar} id="post-avatar" />
-                        <Col md={{ span: 3 }}>
-                          <h4>{post.user.name}</h4>
-                          <h4>{moment(post.date).format("MMM D YYYY")}</h4>
-                        </Col>
-                        <Col md={{ offset: 7, span: 1 }}>
-                          <button
+      {posts.posts &&
+        posts.posts.map((post) => {
+          return (
+            <div className="post-box" key={post._id}>
+              <Container>
+                <Row>
+                  <Col className="d-flex" md={{ span: 12 }}>
+                    <img src={post.user.avatar} className="post-avatar" />
+                    <Col md={{ span: 3 }}>
+                      <h4>{post.user.name}</h4>
+                      <h4>{moment(post.date).format("MMM D YYYY")}</h4>
+                    </Col>
+                    <Col md={{ offset: 7, span: 1 }}>
+                      {/* <button
                             id="post-btn"
                             onClick={() => handleDelete(post._id)}
                           >
                             X
-                          </button>
-                        </Col>
-                      </Col>
-                    </Row>
-                    <Row className="d-flex justify-content-center">
-                      <p>{post.text}</p>
-                    </Row>
-                  </Container>
-                </div>
-              );
-            })}
-        </Col>
-      </Container>
+                          </button> */}
+                      <Dropdown>
+                        <Dropdown.Toggle className="dd-toggle" />
+                        <Dropdown.Menu>
+                          <Dropdown.Item>Edit</Dropdown.Item>
+                          <Dropdown.Item onClick={() => handleDelete(post._id)}>
+                            Delete
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </Col>
+                  </Col>
+                </Row>
+                <Row className="d-flex justify-content-center">
+                  <Col>
+                    <p>{post.text}</p>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          );
+        })}
     </div>
   );
 }

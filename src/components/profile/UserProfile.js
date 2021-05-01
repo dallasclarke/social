@@ -9,7 +9,7 @@ import { getCurrentProfile } from "../../reducers/profile";
 
 function UserProfile() {
   const dispatch = useDispatch();
-  const { profile } = useSelector((state) => state);
+  const profile = useSelector((state) => state.profile);
 
   useEffect(() => {
     dispatch(getCurrentProfile());
@@ -25,7 +25,7 @@ function UserProfile() {
             <InfoBar profile={profile.profile} />
             <Row>
               <Col>
-                <UserInfo profile={profile.profile} />
+                <UserInfo {...profile} />
               </Col>
             </Row>
             <Row>

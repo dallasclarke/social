@@ -1,7 +1,4 @@
-// const GET_POSTS = "GET_POSTS";
-// const POST_ERROR = "POST_ERROR";
-
-const initialState = [];
+const initialState = {};
 
 export const getPostsAction = (posts) => ({
   type: "GET_POSTS",
@@ -9,6 +6,7 @@ export const getPostsAction = (posts) => ({
 });
 
 export const getPosts = () => async (dispatch) => {
+  dispatch({ type: "LOAD_POSTS" });
   const token = localStorage.getItem("token");
   const response = await fetch(`/api/posts`, {
     headers: {
@@ -17,7 +15,7 @@ export const getPosts = () => async (dispatch) => {
     },
   });
   const posts = await response.json();
-  console.log(posts)
+  // console.log(posts)
   //   if (response.status !== 200) {
   //     const error = await response.json();
   //     dispatch({ type: "POST_ERROR", error: error.message });
@@ -48,7 +46,6 @@ export const deletePost = (id) => async (dispatch) => {
 };
 
 export const addPost = (post) => async (dispatch) => {
-
   try {
     const token = localStorage.getItem("token");
     const response = await fetch(`/api/posts`, {
@@ -80,7 +77,14 @@ export default (state = initialState, action) => {
     case "GET_POSTS":
       return {
         ...state,
-        posts: action.payload,
+        data: action.payload,
+        loading: false,
+      };
+
+    case "LOAD_POSTS":
+      return {
+        ...state,
+        loading: true,
       };
 
     case "POST_ERROR":
@@ -93,13 +97,13 @@ export default (state = initialState, action) => {
     case "DELETE_POST":
       return {
         ...state,
-        posts: state.posts.filter((post) => post._id !== action.payload),
+        data: state.data.filter((post) => post._id !== action.payload),
       };
 
     case "ADD_POST":
       return {
         ...state,
-        posts: [...state.posts, action.payload],
+        data: [action.payload, ...state.data],
       };
 
     default:

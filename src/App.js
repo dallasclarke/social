@@ -9,6 +9,7 @@ import {
 import { Container } from "react-bootstrap";
 import "./styles/App.scss";
 
+import AppNav from "./components/nav/Nav";
 import Login from "./components/login/Login";
 import Feed from "./components/feed/Feed";
 import UserProfile from "./components/profile/UserProfile";
@@ -34,19 +35,16 @@ function ProtectedRoute(props) {
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Container fluid>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <ProtectedRoute path="/feed" component={Feed} />
-            <ProtectedRoute path="/profile" component={UserProfile} />
-            <ProtectedRoute path="/" component={Feed} />
-          </Switch>
-          {/* <Login /> */}
-          {/* <Feed /> */}
-          {/* <UserProfile /> */}
-        </Container>
-      </div>
+      <AppNav />
+      <Switch>
+        <Route path="/login" component={Login} />
+        <ProtectedRoute path="/feed" component={Feed} />
+        <ProtectedRoute path="/profile" component={UserProfile} />
+        <ProtectedRoute path="/" component={Feed} />
+      </Switch>
+      {/* <Login /> */}
+      {/* <Feed /> */}
+      {/* <UserProfile /> */}
     </Router>
   );
 }

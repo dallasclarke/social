@@ -24,8 +24,6 @@
     margin-top: 1rem;
     width: 850px;
     height: 25rem;
-    
-   
 }
 
 .info-container {
@@ -44,10 +42,15 @@
 
 #edit-profile-btn {
     color: white;
+    background-color: black;
     border-color: #1adcad;
     border-radius: 25px;
     font-weight: bold;
     padding: 5px 10px;
+}
+
+.bio {
+    margin-top: 6px
 }
 
 //Modal

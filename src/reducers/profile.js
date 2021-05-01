@@ -1,6 +1,4 @@
-const initialState = {
-  profile: {},
-};
+const initialState = {};
 
 export const getCurrentProfile = () => async (dispatch) => {
   const token = localStorage.getItem("token");
@@ -24,15 +22,15 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-export const editProfile = (bio, city, state) => async (dispatch) => {
+export const editProfile = ({bio, city, state}) => async (dispatch) => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("/api/profile", {
+    const response = await fetch("/api/profile", {
       method: "PUT",
       headers: {
         "Content-type": "Application/json",
-        Authorization: "Bear " + token,
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify({
         bio,
@@ -41,8 +39,12 @@ export const editProfile = (bio, city, state) => async (dispatch) => {
       }),
     });
 
+    const res = await response.json();
+    
+
     dispatch({
-      type: "UPDATE_PROFILE"
+      type: "UPDATE_PROFILE",
+      payload: res
     })
   } catch (err) {}
 };
@@ -52,14 +54,14 @@ export default (state = initialState, action) => {
     case "GET_PROFILE":
       return {
         ...state,
-        profile: action.payload,
+       ...action.payload
       };
     case "UPDATE_PROFILE":
       return {
         ...state,
-        bio: action.payload,
-        city: action.payload,
-        state: action.payload,
+        bio: action.payload.bio,
+        city: action.payload.city,
+        state: action.payload.state,
       };
 
     default:

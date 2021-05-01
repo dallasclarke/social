@@ -5,12 +5,8 @@ import { editProfile } from "../../reducers/profile";
 
 import { Modal, Col, Row, Form, Button } from "react-bootstrap";
 
-function ProfileModal({ toggle, setToggle }) {
-  const [profileData, setProfileData] = useState({
-    bio: "",
-    city: "",
-    state: "",
-  });
+function ProfileModal({ toggle, setToggle, defaultValues }) {
+  const [profileData, setProfileData] = useState(defaultValues);
 
   const dispatch = useDispatch();
 
@@ -20,9 +16,9 @@ function ProfileModal({ toggle, setToggle }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    
-  }
+    dispatch(editProfile(profileData));
+    setToggle(false)
+  };
 
   return (
     <div className="modal">
@@ -36,7 +32,9 @@ function ProfileModal({ toggle, setToggle }) {
               <Form.Group as={Col}>
                 <Form.Label>Bio:</Form.Label>
                 <Form.Control
-                  onChange={e => onChange(e)}
+                  onChange={onChange}
+                  value={profileData.bio}
+                  name="bio"
                 />
               </Form.Group>
             </Form.Row>
@@ -44,13 +42,17 @@ function ProfileModal({ toggle, setToggle }) {
               <Form.Group as={Col}>
                 <Form.Label>City:</Form.Label>
                 <Form.Control
-                  onChange={e => onChange(e)}
+                  onChange={onChange}
+                  name="city"
+                  value={profileData.city}
                 />
               </Form.Group>
               <Form.Group as={Col}>
                 <Form.Label>State:</Form.Label>
                 <Form.Control
-                  onChange={(e) => onChange(e)}
+                  onChange={onChange}
+                  name="state"
+                  value={profileData.state}
                 />
               </Form.Group>
             </Form.Row>
