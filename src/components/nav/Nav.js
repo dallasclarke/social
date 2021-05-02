@@ -26,9 +26,9 @@ function AppNav() {
               className="d-inline-block align-top"
             />
           </Navbar.Brand>
-          <Form>
+          {/* <Form>
             <FormControl type="text" placeholder="Search for user" />
-          </Form>
+          </Form> */}
           <Nav>
             <Link to="/profile">
               <button>Profile</button>

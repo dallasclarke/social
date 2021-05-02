@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 import { deletePost, getPosts } from "../../reducers/posts";
-import { Container, Col, Row, Dropdown, Card } from "react-bootstrap";
-import avatar from "../../images/avatar.png";
 import { Link } from "react-router-dom";
+
+import { Container, Col, Row, Dropdown, Card } from "react-bootstrap";
+
 
 function Postings(props) {
   const posts = useSelector((state) => state.posts.data);
   const dispatch = useDispatch();
-  
 
   useEffect(() => {
     dispatch(getPosts());
@@ -23,34 +23,34 @@ function Postings(props) {
     <>
       {posts.map((post) => {
         return (
-          <Link to={`/${post._id}`}>
-            <Card key={post._id}>
-              <Card.Header className="d-flex align-items-center">
-                {post.image ? (
-                  <img
-                    src={`data:image/png;base64,${post.image}`}
-                    className="post-avatar"
-                  />
-                ) : (
-                  <img src={avatar} className="post-avatar" />
-                )}
+          <Card key={post._id}>
+            <Card.Header className="d-flex align-items-center">
+              {post.image ? (
+                <img
+                  src={`data:image/png;base64,${post.image}`}
+                  className="post-avatar"
+                />
+              ) : (
+                <img src={post.user.avatar} className="post-avatar" />
+              )}
+              <Link to={`/${post._id}`}>
                 <h4>{post.user.name}</h4>
-                <h4>{moment(post.date).format("MMM D YYYY")}</h4>
-                <Dropdown>
-                  <Dropdown.Toggle />
-                  <Dropdown.Menu>
-                    <Dropdown.Item>Edit</Dropdown.Item>
-                    <Dropdown.Item onClick={() => handleDelete(post._id)}>
-                      Delete
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Card.Header>
-              <Card.Body>
-                <Card.Text>{post.text}</Card.Text>
-              </Card.Body>
-            </Card>
-          </Link>
+              </Link>
+              <h4>{moment(post.date).format("MMM D YYYY")}</h4>
+              <Dropdown>
+                <Dropdown.Toggle />
+                <Dropdown.Menu>
+                  <Dropdown.Item>Edit</Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleDelete(post._id)}>
+                    Delete
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Card.Header>
+            <Card.Body>
+              <Card.Text>{post.text}</Card.Text>
+            </Card.Body>
+          </Card>
         );
       })}
     </>
