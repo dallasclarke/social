@@ -15,6 +15,8 @@ export const getPosts = () => async (dispatch) => {
     },
   });
   const posts = await response.json();
+
+  console.log('posts', posts)
   // console.log(posts)
   //   if (response.status !== 200) {
   //     const error = await response.json();
@@ -23,6 +25,28 @@ export const getPosts = () => async (dispatch) => {
   //   }
 
   dispatch({ type: "GET_POSTS", payload: posts });
+};
+
+export const getPost = (id) => async (dispatch) => {
+  dispatch({ type: "LOAD_POSTS" });
+  const token = localStorage.getItem("token");
+  const response = await fetch(`/api/posts/${id}`, {
+    headers: {
+      "content-type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  });
+  const post = await response.json();
+
+  console.log("post", post);
+  // console.log(posts)
+  //   if (response.status !== 200) {
+  //     const error = await response.json();
+  //     dispatch({ type: "POST_ERROR", error: error.message });
+  //     return;
+  //   }
+
+  dispatch({ type: "GET_POST", payload: post });
 };
 
 export const deletePost = (id) => async (dispatch) => {
@@ -45,7 +69,8 @@ export const deletePost = (id) => async (dispatch) => {
  */
 };
 
-export const addPost = (post) => async (dispatch) => {
+export const addPost = (post, image) => async (dispatch) => {
+  
   try {
     const token = localStorage.getItem("token");
     const response = await fetch(`/api/posts`, {
@@ -54,7 +79,7 @@ export const addPost = (post) => async (dispatch) => {
         "content-type": "application/json",
         Authorization: "Bearer " + token,
       },
-      body: JSON.stringify({ text: post }),
+      body: JSON.stringify({ text: post, image: image}),
     });
 
     const res = await response.json();
@@ -78,6 +103,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         data: action.payload,
+        loading: false,
+      };
+
+    case "GET_POST":
+      return {
+        ...state,
+        post: action.payload,
         loading: false,
       };
 
