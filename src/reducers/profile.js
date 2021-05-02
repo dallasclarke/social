@@ -45,7 +45,9 @@ export const editProfile = ({bio, city, state}) => async (dispatch) => {
       type: "UPDATE_PROFILE",
       payload: res
     })
-  } catch (err) {}
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export default (state = initialState, action) => {

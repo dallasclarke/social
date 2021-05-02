@@ -56,6 +56,12 @@ function ProfileModal({ toggle, setToggle, defaultValues }) {
                 />
               </Form.Group>
             </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col}>
+                <Form.Label>Change Profile Pic:</Form.Label>
+                <Form.Control type="file" />
+              </Form.Group>
+            </Form.Row>
           </Form>
         </Modal.Body>
         <Row>
