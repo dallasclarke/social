@@ -48,5 +48,20 @@
   box-shadow: none;
 }
 
+.post-image {
+  width: 50%;
+  height: auto;
+}
 
+.post-card {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 
+  a {
+    color: white;
+  }
+}
+
+.card-body {
+  text-align: center;
+}

@@ -20,3 +20,30 @@ body {
   border: solid 2px #1adcad;
   margin-top: 1rem;
 }
+
+.dropdown-toggle {
+  background-color: #0f0f0f;
+  border: solid 2px #1adcad;
+}
+.dropdown-toggle:hover {
+  background-color: #0f0f0f;
+  border: solid 2px #1adcad;
+}
+.show .btn-primary.dropdown-toggle:focus {
+  background-color: #1adcad;
+  box-shadow: none;
+}
+.show>.btn-primary.dropdown-toggle {
+  background-color: #1adcad;
+  border: none;
+}
+button.dropdown-toggle:active {
+  background-color: #1adcad;
+  box-shadow: none;
+  outline: none;
+}
+
+a.dropdown-item {
+  color: black;
+  
+}

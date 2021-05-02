@@ -6,10 +6,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import { Container } from "react-bootstrap";
 import "./styles/App.scss";
 
-import AppNav from "./components/nav/Nav";
 import Login from "./components/login/Login";
 import Feed from "./components/feed/Feed";
 import UserProfile from "./components/profile/UserProfile";
@@ -35,7 +33,7 @@ function ProtectedRoute(props) {
 function App() {
   return (
     <Router>
-      <AppNav />
+      {/* <AppNav /> */}
       <Switch>
         <Route path="/login" component={Login} />
         <ProtectedRoute path="/feed" component={Feed} />
