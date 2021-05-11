@@ -18,13 +18,14 @@ function AppNav() {
       <Container>
         <Navbar className="bar justify-content-between" fixed="top">
           <Navbar.Brand href="/">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+            {/* <img
+              src="https://logodix.com/logo/559589.jpg"
               alt="Logo"
               width="30"
               height="30"
               className="d-inline-block align-top"
-            />
+            /> */}
+            <h3>Social</h3>
           </Navbar.Brand>
           {/* <Form>
             <FormControl type="text" placeholder="Search for user" />

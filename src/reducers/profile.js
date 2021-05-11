@@ -26,7 +26,7 @@ export const editProfile = ({bio, city, state}) => async (dispatch) => {
 
   try {
     const response = await fetch("/api/profile", {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-type": "Application/json",
         Authorization: "Bearer " + token,
@@ -34,13 +34,12 @@ export const editProfile = ({bio, city, state}) => async (dispatch) => {
       body: JSON.stringify({
         bio,
         city,
-        state,
+        state,      
       }),
     });
 
     const res = await response.json();
-    
-
+    console.log(res, "successfully edited!!!!!")
     dispatch({
       type: "UPDATE_PROFILE",
       payload: res
@@ -62,7 +61,7 @@ export default (state = initialState, action) => {
         ...state,
         bio: action.payload.bio,
         city: action.payload.city,
-        state: action.payload.state,
+        state: action.payload.state,        
       };
 
     default:

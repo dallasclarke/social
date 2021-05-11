@@ -16,7 +16,7 @@ export const getPosts = () => async (dispatch) => {
   });
   const posts = await response.json();
 
-  console.log('posts', posts)
+  console.log("posts", posts);
   // console.log(posts)
   //   if (response.status !== 200) {
   //     const error = await response.json();
@@ -69,8 +69,7 @@ export const deletePost = (id) => async (dispatch) => {
  */
 };
 
-export const addPost = (post, image) => async (dispatch) => {
-  
+export const addPost = (post, image, extension) => async (dispatch) => {
   try {
     const token = localStorage.getItem("token");
     const response = await fetch(`/api/posts`, {
@@ -79,7 +78,7 @@ export const addPost = (post, image) => async (dispatch) => {
         "content-type": "application/json",
         Authorization: "Bearer " + token,
       },
-      body: JSON.stringify({ text: post, image: image}),
+      body: JSON.stringify({ text: post, image, extension }),
     });
 
     const res = await response.json();

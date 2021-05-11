@@ -58,10 +58,7 @@ function Postings(props) {
             <Card.Body className="card-body">
               <Card.Text>{post.text}</Card.Text>
               {post.image && (
-                <img
-                  src={`data:image/png;base64,${post.image}`}
-                  className="post-image"
-                />
+                <img src={`/content/${post.image}`} className="post-image" />
               )}
             </Card.Body>
           </Card>

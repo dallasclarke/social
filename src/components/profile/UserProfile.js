@@ -4,6 +4,8 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import InfoBar from "./InfoBar";
 import UserInfo from "./UserInfo";
+import ProfilePosts from "./ProfilePosts";
+
 import { getCurrentProfile } from "../../reducers/profile";
 import { getPosts } from "../../reducers/posts";
 
@@ -22,7 +24,7 @@ function UserProfile() {
 
   return (
     <div className="user-profile">
-      <Container className="profile-container d-flex justify-content-center">
+      {/* <Container className="profile-container d-flex justify-content-center">
         <Row>
           <Col>
             <InfoBar profile={profile.profile} />
@@ -32,14 +34,38 @@ function UserProfile() {
               </Col>
             </Row>
           </Col>
-        </Row>
+        </Row>        
       </Container>
-      <h2>Posts by user</h2>
+      <Row>
+
       {userPosts.map((post) => (
-        <div>
+        <div key={post._id}>
           <p>text: {post.text}</p>
         </div>
       ))}
+      </Row> */}
+      <Row>
+        <Col md={{ offset: 3}}>
+          <InfoBar {...profile} />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{offset: 3}}>
+          <UserInfo {...profile} />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={{ offset: 3 }}>
+          {userPosts.map((post) => (
+            <div key={post._id}>
+             { console.log(post)}
+              {/* <p>{post.text}</p> */}
+              <ProfilePosts {...post} />
+            </div>
+          ))}
+          <ProfilePosts />
+        </Col>
+      </Row>
     </div>
   );
 }

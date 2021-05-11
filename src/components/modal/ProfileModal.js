@@ -56,12 +56,12 @@ function ProfileModal({ toggle, setToggle, defaultValues }) {
                 />
               </Form.Group>
             </Form.Row>
-            <Form.Row>
+            {/* <Form.Row>
               <Form.Group as={Col}>
                 <Form.Label>Change Profile Pic:</Form.Label>
-                <Form.Control type="file" />
+                <Form.Control type="file" name="avatar" value={profileData.avatar} onChange={onChange} />
               </Form.Group>
-            </Form.Row>
+            </Form.Row> */}
           </Form>
         </Modal.Body>
         <Row>
