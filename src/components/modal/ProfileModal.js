@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { editProfile } from "../../reducers/profile";
 
 import { Modal, Col, Row, Form, Button } from "react-bootstrap";

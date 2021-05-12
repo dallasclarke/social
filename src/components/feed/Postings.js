@@ -28,7 +28,7 @@ function Postings(props) {
             <Card.Header>
               <Row>
                 <Col md={{ span: 1 }}>
-                  <img src={post.user.avatar} className="post-avatar" />
+                  <img src={post.user.avatar} alt="user-avatar" className="post-avatar" />
                 </Col>
                 <Col md={{ span: 2 }}>
                   <Link to={`/${post._id}`}>

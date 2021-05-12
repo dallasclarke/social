@@ -21,12 +21,12 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-export const editProfile = ({bio, city, state}) => async (dispatch) => {
+export const editProfile = ({bio, city, state }) => async (dispatch) => {
   const token = localStorage.getItem("token");
 
   try {
     const response = await fetch("/api/profile", {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-type": "Application/json",
         Authorization: "Bearer " + token,
@@ -34,7 +34,8 @@ export const editProfile = ({bio, city, state}) => async (dispatch) => {
       body: JSON.stringify({
         bio,
         city,
-        state,      
+        state,
+            
       }),
     });
 
