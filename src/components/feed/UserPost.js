@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FileBase64 from "react-file-base64";
 
 import { Container, Row, Col, FormControl, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,10 +15,6 @@ function UserPost() {
     dispatch(addPost(text, image, extension));
     setText("");
   };
-
-  // const getFiles = (files) => {
-  //   setImage(files.base64)
-  // }
 
   const handleFileChange = (e) => {
     const files = e.target.files;
@@ -50,11 +45,7 @@ function UserPost() {
               type="file"
               name="fileToUpload"
               onChange={handleFileChange}
-            />
-            {/* <FileBase64 
-            multiple={false}
-            onDone={getFiles}
-            /> */}
+            />           
             <button onClick={handlePost}>Post</button>
           </Form>
         </Col>

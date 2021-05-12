@@ -41,9 +41,6 @@ function App() {
         <Route path="/:id" component={UserPostInfo} />
         <ProtectedRoute path="/" component={Feed} />
       </Switch>
-      {/* <Login /> */}
-      {/* <Feed /> */}
-      {/* <UserProfile /> */}
     </Router>
   );
 }

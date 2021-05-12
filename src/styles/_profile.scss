@@ -1,83 +1,82 @@
-// Profile
-
-
 // Info Bar
 .info-bar {
-    border: solid 2px #1adcad;
-    width: 850px;
-    height: 6rem;
-    text-align: center;
-
+  border: solid 2px #1adcad;
+  min-height: 6vh;
 }
 
 #arrow {
-    color: #1adcad;
-    cursor: pointer;
+  color: #1adcad;
+  cursor: pointer;
 }
 #arrow:active {
-    transform: scale(0.85);
+  transform: scale(0.85);
 }
 
 // User Info
 .user-info {
-    border: solid 2px #1adcad;
-    margin-top: 1rem;
-    width: 850px;
-    height: 25rem;
+  border: solid 2px #1adcad;
+  margin-top: 1rem;
+  // width: 850px;
+  // height: 25rem;
 }
 
 .info-container {
-    margin-top: 2rem;
-    flex-direction: column;
-    color: white;
-    font-family: "Roboto", sans-serif;
-    
+  margin-top: 2rem;
+  flex-direction: column;
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 #profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    height: 100px;
+  border-radius: 50%;
+  width: 150px;
+  height: 100px;
 }
 
 #edit-profile-btn {
-    color: white;
-    background-color: black;
-    border-color: #1adcad;
-    border-radius: 25px;
-    font-weight: bold;
-    padding: 5px 10px;
+  color: white;
+  background-color: black;
+  border-color: #1adcad;
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 5px 10px;
 }
 
 .bio {
-    margin-top: 6px
+  margin-top: 6px;
 }
 
 //Modal
 .modal {
-    color: white;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    background: transparent;
-    margin-top: 5rem;
-    
-    button {
-        color: white
-    }
-    button:hover {
-        color: #1adcad;
-    }
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background: transparent;
+  margin-top: 5rem;
 
-    #modal-btn {
-        background-color: #1c1c1c;
-        font-weight: bold;
-        border: solid 2px #1adcad;
-    }
-    #modal-btn:focus {        
-        box-shadow: none;
-    }
+  button {
+    color: white;
+  }
+  button:hover {
+    color: #1adcad;
+  }
+
+  #modal-btn {
+    background-color: #1c1c1c;
+    font-weight: bold;
+    border: solid 2px #1adcad;
+  }
+  #modal-btn:focus {
+    box-shadow: none;
+  }
 }
 
 .profile-posts {
-    border: solids 2px #1adcad;
+  border: solid 1px #1adcad;
+  text-align: center;
+
+  img {
+    width: 50%;
+    height: auto;
+  }
 }

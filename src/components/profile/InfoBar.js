@@ -5,26 +5,24 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 
 function InfoBar(props) {
-  return (
-    <div className="info-bar d-flex align-items-center">
-      <Container className="d-flex">
-        <Row className="d-flex align-items-center">
-          <Col md={{ span: 3 }}>
-            <Link to="/">
-              <FaLongArrowAltLeft id="arrow" size={40} />
-            </Link>
-          </Col>
-          <Col md={{ span: 6 }}>
-            <h4>{props.name}</h4>
-          </Col>
-        </Row>
-        <Row className="d-flex align-items-center" md={{ span: 5 }}>
+  return (    
+    <Container className="info-bar d-flex align-items-center">
+      <Row>
+        <Col xs={{span: 3}} md={{ span: 3 }}>
+          <Link to="/">
+            <FaLongArrowAltLeft id="arrow" size={40} />
+          </Link>
+        </Col>
+        <Col className="d-flex align-items-center">
+          <h4>{props.name}</h4>
+        </Col>
+      </Row>
+      {/* <Row className="d-flex align-items-center" md={{ span: 5 }}>
           <Col>
-            {/* <h4>{props.profile.posts.length} Posts</h4> */}
+            <h4>{props.profile.posts.length} Posts</h4>
           </Col>
-        </Row>
-      </Container>
-    </div>
+        </Row> */}
+    </Container>
   );
 }
 

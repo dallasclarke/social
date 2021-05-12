@@ -22,51 +22,29 @@ function UserProfile() {
     dispatch(getPosts());
   }, []);
 
-  return (
-    <div className="user-profile">
-      {/* <Container className="profile-container d-flex justify-content-center">
-        <Row>
-          <Col>
-            <InfoBar profile={profile.profile} />
-            <Row>
-              <Col>
-                <UserInfo {...profile} />
-              </Col>
-            </Row>
-          </Col>
-        </Row>        
-      </Container>
+  return (   
+    <Container>
       <Row>
-
-      {userPosts.map((post) => (
-        <div key={post._id}>
-          <p>text: {post.text}</p>
-        </div>
-      ))}
-      </Row> */}
-      <Row>
-        <Col md={{ offset: 3}}>
+        <Col>
           <InfoBar {...profile} />
         </Col>
       </Row>
       <Row>
-        <Col md={{offset: 3}}>
+        <Col>
           <UserInfo {...profile} />
         </Col>
       </Row>
       <Row>
-        <Col md={{ offset: 3 }}>
+        <Col>
           {userPosts.map((post) => (
-            <div key={post._id}>
-             { console.log(post)}
-              {/* <p>{post.text}</p> */}
+            <div key={post._id} className="profile-posts">
               <ProfilePosts {...post} />
             </div>
           ))}
           <ProfilePosts />
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 }
 

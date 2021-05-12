@@ -20,7 +20,7 @@ const Post = (props) => {
     dispatch(getPost(props.match.params.id));
   }, []);
 
-  console.log("single post user ====>", post)
+  // console.log("single post user ====>", post)
 
   if (post) {
     return (
