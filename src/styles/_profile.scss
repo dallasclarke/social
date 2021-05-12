@@ -16,34 +16,37 @@
 .user-info {
   border: solid 2px #1adcad;
   margin-top: 1rem;
-  // width: 850px;
-  // height: 25rem;
+  
 }
 
-.info-container {
-  margin-top: 2rem;
-  flex-direction: column;
+.info-container { 
   color: white;
   font-family: "Roboto", sans-serif;
 }
 
-#profile-pic {
+.profile-pic {
   border-radius: 50%;
   width: 150px;
-  height: 100px;
+  height: 150px;
+  margin-top: 1rem;
 }
 
-#edit-profile-btn {
+.edit-profile-btn {
   color: white;
   background-color: black;
   border-color: #1adcad;
   border-radius: 25px;
   font-weight: bold;
   padding: 5px 10px;
+  margin-top: 2rem;
 }
 
-.bio {
-  margin-top: 6px;
+// .bio {
+//   margin-top: 6px;
+// }
+.bio-text {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 
 //Modal
@@ -80,3 +83,10 @@
     height: auto;
   }
 }
+
+.city-dates {
+  text-align: center;
+  margin-bottom: 0.4rem;
+
+}
+

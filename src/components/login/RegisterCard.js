@@ -10,19 +10,17 @@ function RegisterCard() {
     email: "",
     password: "",
     birthday: "",
-  })
+  });
 
-   const dispatch = useDispatch();
-  
-  const handleChange = e => {
-     setFormData({...formData, [e.target.name]: e.target.value})
-  }
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = () => {
-     dispatch(authRegisterUser(formData));
-
-  }
-
+    dispatch(authRegisterUser(formData));
+  };
 
   return (
     <div className="d-flex align-items-center fullvHeight">
@@ -39,7 +37,7 @@ function RegisterCard() {
                 type="name"
                 placeholder="Full Name"
                 className="register-inputs"
-                name='name'
+                name="name"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -50,7 +48,7 @@ function RegisterCard() {
                 type="email"
                 placeholder="Enter Email"
                 className="register-inputs"
-                 name='email'
+                name="email"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -61,7 +59,7 @@ function RegisterCard() {
                 type="password"
                 placeholder="Password"
                 className="register-inputs"
-                 name='password'
+                name="password"
                 onChange={handleChange}
               />
             </Form.Group>
@@ -70,17 +68,18 @@ function RegisterCard() {
             <Form.Group as={Col} md={{ span: 4, offset: 4 }}>
               <Form.Control
                 type="date"
-                name="date_of_birth"
                 placeholder="Birthday"
                 id="date"
-                 name='birthday'
+                name="birthday"
                 onChange={handleChange}
               />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md={{ span: 3, offset: 4 }}>
-              <Button id="register-button" onClick={handleSubmit}>Register</Button>
+              <Button id="register-button" onClick={handleSubmit}>
+                Register
+              </Button>
             </Form.Group>
           </Form.Row>
         </Form>

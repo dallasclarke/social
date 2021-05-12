@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Container, Row, Col, FormControl, Form } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addPost } from "../../reducers/posts";
 
 function UserPost() {
