@@ -4,7 +4,7 @@ import moment from "moment";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaMapMarkerAlt, FaCalendar, FaCheck } from "react-icons/fa";
 import ProfileModal from "../modal/ProfileModal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function UserInfo({
   image,
@@ -20,19 +20,21 @@ function UserInfo({
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
+  const userId = localStorage.getItem("userId");
+
   return (
     <Container className="user-info info-container">
       <Row className="ml-4 mb-2">
         <Col md={{ span: 1 }}>
           <img src={avatar} alt="user-avatar" className="profile-pic" />
         </Col>
-        <Col md={{ offset: 8 }}>
-          <button
-            className="edit-profile-btn"
-            onClick={() => setShowModal(!showModal)}
-          >
-            Edit Profile
-          </button>
+        <Col md={{ offset: 8 }}>          
+            <button
+              className="edit-profile-btn"
+              onClick={() => setShowModal(!showModal)}
+            >
+              Edit Profile
+            </button>          
         </Col>
       </Row>
       <Row className="text-left">

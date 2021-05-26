@@ -22,12 +22,12 @@ const Post = (props) => {
     return (
       <div key={post.user._id}>
         <Row>
-          <Col md={{ offset: 3 }}>
+          <Col md={{ offset: 1 }}>
             <InfoBar />
           </Col>
         </Row>
         <Row>
-          <Col md={{ offset: 3 }}>
+          <Col md={{ offset: 1 }}>
             <UserInfo {...post.user} post={post} />
           </Col>
         </Row>
