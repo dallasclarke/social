@@ -10,7 +10,7 @@ function Postings(props) {
   const posts = useSelector((state) => state.posts.data);
   const dispatch = useDispatch();
 
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem("userId"); 
 
   useEffect(() => {
     dispatch(getPosts());
